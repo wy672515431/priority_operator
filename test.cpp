@@ -60,6 +60,7 @@ int main(int argc,char **argv)
     //标记读入符号的位置
     int flag=0;
     while(true){
+        //c=getchar();
         c = fgetc(fp);
         if(c == '\r'|| c=='\n')
             break;
@@ -148,7 +149,7 @@ int main(int argc,char **argv)
                     }
                 }
                 else if(stack_t[flag1]==')'){
-                    if(flag1-1<0||flag1+1>=top){
+                    if(flag1-1<0||flag1-2<0){
                         cout<<"RE"<<endl;
                         return 0;
                     }
