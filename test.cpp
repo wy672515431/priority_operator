@@ -51,14 +51,16 @@ char pop(){
     top--;
     return tem;
 }
-int main()
+int main(int argc,char **argv)
 {
     /*读取一行字符串*/
     char c;
+    FILE*fp;
+    fp =fopen(argv[1],"r");
     //标记读入符号的位置
     int flag=0;
     while(true){
-        c = getchar();
+        c = fgetc(fp);
         if(c == '\r'|| c=='\n')
             break;
         s+=c;
@@ -166,6 +168,5 @@ int main()
             }
         }
     }
-
-
+    fclose(fp);
 }
